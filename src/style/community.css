@@ -1,0 +1,36 @@
+.media-card {
+    margin: 1rem;
+}
+
+/* Community - Page Structure */
+
+.community-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 3rem 3rem;
+  }
+  
+  .community-items {
+    border: var(--mixer-border-primary);
+  }
+
+  .section-discussion {
+    width: 100%;
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .section-summary {
+    border-left: var(--mixer-border-primary);
+    color: white;
+    
+    width: 40%;
+    padding: 1.0rem;
+  }
+
+  .section-button {
+    display: flex;
+    justify-content:first baseline;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }

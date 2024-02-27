@@ -1,0 +1,37 @@
+/* https://docs.microsoft.com/en-us/azure/communication-services/quickstarts/voice-video-calling/get-started-with-video-calling?pivots=platform-web */
+/* 1-on-1 video call walkthrough */
+
+/* Github */
+
+#callee-id-input {
+    margin-bottom:1em;
+    width: 200px;
+}
+
+.video-container {
+    height:200px;
+    width:300px;
+    background-color:black;
+    position:relative;
+}
+
+.video-stream {
+    background-color: black;
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+/* Basic Styling */
+
+.flex-center-items {
+    list-style: none;
+    text-decoration: none;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

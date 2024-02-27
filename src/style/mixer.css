@@ -1,0 +1,429 @@
+/* The code found below was transfered from App.css */
+/* The grid styling for the Mixer is still found in App.css */
+
+/**** Table of Contents ****/
+/* Mixer - Page Structure*/
+/* Mixer Components */
+/* Channels - Common */
+/* Channels - Master*/
+/* Channels - User */
+/* Video Stream Controls */
+/* Pan Control */
+
+video {
+  /* object-fit: contain; */
+  max-height: 138px;
+}
+
+
+/* Mixer - Page Structure*/
+
+.mixer-container {
+  display: grid;
+  height: calc(100vh - 59px - 1rem);
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'channel chat'
+    'channel chat'
+    'channel chat'
+    'channel chat'
+    'plugins plugins';
+  grid-gap: 0.5rem;
+  /* background-color: var(--app-bg-dark); */
+  border-radius: var(--mixer-border-radius);
+}
+
+.mixer-items {
+  border: var(--mixer-border-primary);
+}
+
+.mixer-container-a,
+.mixer-container-b,
+.mixer-container-c {
+  border: var(--mixer-border-primary);
+  border-radius: var(--mixer-border-radius);
+  /* background-color: var(--mixer-item-bg-color); */
+  background-color: var(--app-bg-dark);
+}
+
+.mixer-container-a {
+  grid-area: channel;
+  min-width: 520px;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.mixer-container-b {
+  grid-area: chat;
+  min-width: 330px;
+}
+
+.mixer-container-c {
+  grid-area: plugins;
+}
+
+/* Mixer Components */
+
+.channels-container {
+  display: flex;
+  /* gap:.5rem; */
+  height: calc(100% - .5rem); /* mix-container has grid-gap: .5rem; and m-1 */
+  min-width: 1000px;
+}
+
+.add-channel-btn {
+  font-size: 3rem;
+  align-self: flex-start;
+/* Adjust for extra y-axis space on FontAwesome plus icon */
+  margin: -2px 0 0 .5rem;
+}
+
+/* Channels - Common */
+
+.controls-container {
+  /* flex-grow: 1;
+  display: flex;
+  flex-direction: column; */
+  width: 100%;
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+.channel-video {
+  flex-grow: 2;
+  margin: 0 auto;
+  /* width: 100%; */
+  /* height: 94px; */
+}
+
+.channel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2rem;
+  width: 100%;
+  border-bottom: var(--mixer-border-primary);
+}
+
+.header-right-border {
+  height: 100%;
+  padding: 0 .5rem;
+}
+
+/* Channels - Master*/
+
+.master-channel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Evalute the size reqirements as updates are made */
+  /* Reevaluate the size requirements once the Master channel is complete */
+  width: 400px;
+  min-width: 400px;
+  height: 100%;
+  /* border: var(--mixer-border-primary); */
+  border-radius: var(--mixer-border-radius);
+  background-color: var(--app-bg-dark);
+}
+
+.dual-controls-container {
+  flex-grow: 3;
+  display: flex;
+  /* align-items: stretch; */
+  width: 100%;
+}
+
+/* Channels - User */
+
+.channel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* border: var(--mixer-border-primary); */
+  border-radius: var(--mixer-border-radius);
+  background-color: var(--app-bg-dark);
+  width: 300px;
+  min-width: 300px;
+  height: 100%;
+  /* border-left: var(--mixer-border-primary); */
+}
+
+@media screen and (max-width: 1300px) {
+  .channel-container {
+      width: 200px;
+      min-width: 200px;
+    }
+  }
+
+/* Video Stream Controls */
+
+.video-stream-control {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  /* border-left: var(--mixer-border-primary); */
+}
+
+.stream-toggle-container-a {
+  width: 20px;
+  /* display: flex; */
+}
+
+.stream-toggle-container-b {
+  width: 36px;
+  /* display: flex; */
+}
+
+.stream-control-item {
+  margin: 10px 0;
+}
+
+/* Pan Control */
+
+.pan-control-container {
+  /* flex-grow: 2; */
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: .5rem 1rem;
+  /* margin: .5rem 0; */
+  /* border-left: var(--mixer-border-primary); */
+}
+
+.dual-left .pan-control-container {
+  padding-right: 5px;
+}
+
+.dual-right .pan-control-container {
+  padding-left: 5px;
+}
+
+.pan-range-container {
+  width: 100%;
+  padding-bottom: .5rem;
+}
+
+/* Volume Controls */
+
+.dual-volume-container {
+  flex-grow: 3;
+  display: flex;
+  /* align-items:flex-end; */
+  width: 100%;
+  height: 100%;
+}
+
+.single-volume-container {
+  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* border-left: var(--mixer-border-primary); */
+}
+
+.volume-control-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* .rotate-neg90 {
+  transform: translate(-50%,-50%) rotate(-90deg);
+} */
+
+/* Channel Components - Scrollbar */
+
+/* width */
+.mixer-container-a::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
+}
+
+/* Track */
+.mixer-container-a::-webkit-scrollbar-track {
+  background: var(--range-control-track-color);
+}
+
+/* Handle */
+.mixer-container-a::-webkit-scrollbar-thumb {
+  background: var(--range-control-thumb-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.mixer-container-a::-webkit-scrollbar-thumb:hover {
+  background: rgb(243, 53, 53);
+}
+
+/* Channel Components - Slider Control */
+
+/* @media screen and (-webkit-min-device-pixel-ratio:0) {
+  input[type='range'] {
+    overflow: hidden;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+
+    box-shadow: -80px 0 0 80px rgb(243, 53, 53);
+  }
+
+} */
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: var(--range-control-track-color);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+/* .slider::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+} */
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  /* width: 20px; */
+  height: 20px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  /* background: var(--range-control-thumb-color); */
+  background: black;
+  /* border: 1px solid var(--range-control-thumb-color); */
+  cursor: pointer;
+  -webkit-transition: .1s;
+  transition: height .1s;
+  transition: width .1s;
+
+  /* box-shadow: -80px 0 0 80px #43e5f7; */
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: var(--range-control-thumb-color);
+  cursor: pointer;
+}
+
+/* Mixer Components - Chat - Message Tab */
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 1rem); /* mix-container has grid-gap: .5rem;  */
+  /* min-width: 330px; */
+}
+
+.chat-container-a {
+  height: 45px;
+}
+
+.chat-container-b {
+  flex-grow: 1;
+
+}
+
+.chat-container-c {
+  height: 45px;
+}
+
+.message-container {
+  max-height: 100%;
+  margin-right: 5px;
+  padding: .3rem;
+}
+
+.single-message-container {
+  width: fit-content;
+  background-color: var(--mixer-item-bg-color);
+  border-radius: 5px;
+  padding-left: 5px;
+  margin-right: 2rem;
+  margin-bottom: 5px;
+  word-break: break-all;
+  font-size: 18px;
+}
+
+.message-user {
+  font-size: small;
+  padding: 5px 10px 0px 5px;
+}
+
+.message-text {
+  padding: 0px 10px 5px 5px;
+  font-size: 18px;
+  color:white;
+}
+
+.bot-message-container {
+  width: fit-content;
+  /* background-color: var(--mixer-item-bg-color);
+  border-radius: 5px; */
+  padding-left: 5px;
+  margin-right: 2rem;
+  margin-bottom: 5px;
+  word-break: break-all;
+  font-size: 10px;
+}
+
+.message-bot {
+  font-size: small;
+  padding: 5px 10px 0px 5px;
+}
+
+.message-bot-text {
+  padding: 0px 10px 5px 5px;
+  font-size: 12px;
+  color:white;
+}
+
+.leave-room-button {
+  text-align: right;
+}
+
+/* Mixer Components - Chat - Members Tab*/
+
+.member-user-list {
+  color:white;
+  width: 200px;
+  height: 100%;
+  margin: 1rem;
+}
+
+/* Mixer Components - Chat - Rooms Tab */
+
+/* Media Queries */
+
+@media screen and (max-width: 1300px) {
+  .master-channel-container {
+    width: 300px;
+    min-width: 300px;
+  }
+
+  .channel-container{
+    width: 200px;
+    min-width: 200px;
+  }
+}
